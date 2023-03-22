@@ -1,0 +1,17 @@
+.profile__grid {
+  display: grid;
+  grid-template-areas:
+  "profile__avatar profile__info profile__vector"
+  "profile__avatar . .";
+  align-items: center;
+  align-content: center;
+}
+
+@media screen and (max-width:900px) {
+.profile__grid {
+  grid-template-areas:
+  "profile__avatar profile__avatar"
+  "profile__info profile__vector";
+  justify-items: center;
+  }
+}

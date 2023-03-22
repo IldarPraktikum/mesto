@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./pages/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesto Russia</title>
+</head>
+<body class="page">
+  <div class="page__container">
+    <header class="header">
+      <img class="header__logo" src="./images/logo/Header-Logo.svg" alt="надпись Mesto Russia">
+      <img class="header__line" src="./images/logo/Header-Line.svg" alt="линия">
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__grid">
+          <img class="profile__avatar" src="./images/Profile-Avatar-Kusto.jpg" alt="Жак-Ив Кусто">
+          <div class="profile__info">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <p class="profile__activity">Исследователь океана</p>
+          </div>
+          <div class="profile__vector profile__completion hover"><img class="profile__vector_logo" src="./images/logo/Profile-Vector-Pen.svg" alt="картитнка ручка"></div>
+        </div>
+        <div class="profile__button hover"><img class="profile__button_logo" src="./images/logo/Profile-Vector-Plus.svg" alt="+"></div>
+      </section>
+      <section class="elements">
+        <ul class="element">
+          <li class="element__digit">
+            <h3 class="element__heading">Карачаевск</h3>
+            <button type="button" class="element__button button_activ hover"></button>
+            <img class="element__photo-grid" src="./images/Element-Karachaevsk.jpg" alt="логотип">
+          </li>
+          <li class="element__digit">
+            <h3 class="element__heading">Гора Эльбрус</h3>
+            <button type="button" class="element__button hover"></button>
+            <img class="element__photo-grid" src="./images/Element-Elbrus.jpg" alt="логотип">
+          </li>
+          <li class="element__digit">
+            <h3 class="element__heading">Домбай</h3>
+            <button type="button" class="element__button hover"></button>
+            <img class="element__photo-grid" src="./images/Element-Dombai.jpg" alt="логотип">
+          </li>
+          <li class="element__digit">
+            <h3 class="element__heading">Гора Эльбрус</h3>
+            <button type="button" class="element__button hover"></button>
+            <img class="element__photo-grid" src="./images/Element-Elbrus.jpg" alt="логотип">
+          </li>
+          <li class="element__digit">
+            <h3 class="element__heading">Домбай</h3>
+            <button type="button" class="element__button hover"></button>
+            <img class="element__photo-grid" src="./images/Element-Dombai.jpg" alt="логотип">
+          </li>
+          <li class="element__digit">
+            <h3 class="element__heading">Карачаево-Черкесская республика</h3>
+            <button type="button" class="element__button hover"></button>
+            <img class="element__photo-grid" src="./images/Element-Karachaevsk.jpg" alt="логотип">
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__author">&#169; Ильдар Кильдияров</p>
+    </footer>
+  </div>
+  <section class="popup popup__completion">
+    <div class="popup__container">
+      <img class="popup__close hover" src="./images/logo/Popup-Close-Icon.svg" alt="крестик">
+      <h2 class="popup__text">Редактировать профиль</h2>
+      <form class="popup__form">
+        <input class="popup__input popup__input_type_name" name="name" />
+        <input class="popup__input popup__input_type_job" name="job" />
+        <button type="submit" class="popup__submit hover">Сохранить</button>
+      </form>
+    </div>
+  </section>
+  <script src="./js/index.js"></script>
+</body>
+</html>

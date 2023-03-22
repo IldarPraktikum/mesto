@@ -1,0 +1,16 @@
+.profile__vector {
+  grid-area: profile__vector;
+  max-width: 24px;
+  max-height: 24px;
+  border: 1px solid white;
+  align-self: self-start;
+  margin-top: 37px;
+}
+
+@media screen and (max-width:380px) {
+.profile__vector {
+  max-width: 18px;
+  max-height: 18px;
+  margin-top: 30.2px;
+  }
+}

@@ -1,0 +1,12 @@
+.popup__input_type_name {
+  position: absolute;
+  left: 36px;
+  top: 111px;
+}
+
+@media screen and (max-width:500px) {
+  .popup__input_type_name {
+    left: 22px;
+    top: 122px;
+  }
+}

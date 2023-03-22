@@ -1,0 +1,19 @@
+.profile__activity {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.21;
+  margin: 0;
+}
+
+@media screen and (max-width:900px) {
+  .profile__activity {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:380px) {
+  .profile__activity {
+    font-size: 14px;
+  }
+}

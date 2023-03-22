@@ -1,0 +1,9 @@
+.element__digit {
+  max-width: 282px;
+  min-height: 361px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}

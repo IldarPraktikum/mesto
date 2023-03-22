@@ -1,0 +1,11 @@
+.profile__info {
+  margin: 0;
+  grid-area: profile__info;
+  padding: 22px 18px 25px 0;
+}
+
+@media screen and (max-width:900px) {
+.profile__info {
+  padding: 22px 10px 36px 0;
+  }
+}
