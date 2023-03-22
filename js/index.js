@@ -1,5 +1,5 @@
 const profileCompletion = document.querySelector(".profile__completion");
-const profilePopupCompletion = document.querySelector(".popup__completion");
+const profilePopupCompletion = document.querySelector(".popup");
 const profilePopupCloseCompletion = profilePopupCompletion.querySelector(".popup__close");
 const nameInput = profilePopupCompletion.querySelector(".popup__input_type_name");
 const nameInputJob = profilePopupCompletion.querySelector(".popup__input_type_job");

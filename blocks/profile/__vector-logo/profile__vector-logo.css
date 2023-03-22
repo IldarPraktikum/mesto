@@ -1,10 +1,10 @@
-.profile__vector_logo {
+.profile__vector-logo {
   max-width: 10px;
   padding: 7px;
 }
 
 @media screen and (max-width:380px) {
-.profile__vector_logo {
+.profile__vector-logo {
   max-width: 7.5px;
   padding: 5.2px;
   }
