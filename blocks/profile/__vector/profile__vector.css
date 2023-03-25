@@ -1,10 +1,19 @@
 .profile__vector {
   grid-area: profile__vector;
-  max-width: 24px;
-  max-height: 24px;
-  border: 1px solid white;
+  border: 1px solid #fff;
+  background: url(../../../images/logo/profile-logo-pen.svg);
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: center;
+  width: 24px;
+  height: 24px;
   align-self: self-start;
   margin-top: 37px;
+}
+
+.profile__vector:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
 
 @media screen and (max-width:380px) {
@@ -14,3 +23,6 @@
   margin-top: 30.2px;
   }
 }
+
+
+

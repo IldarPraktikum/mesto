@@ -1,23 +1,20 @@
-const profileCompletion = document.querySelector(".profile__completion");
-const profilePopupCompletion = document.querySelector(".popup");
-const profilePopupCloseCompletion = profilePopupCompletion.querySelector(".popup__close");
-const nameInput = profilePopupCompletion.querySelector(".popup__input_type_name");
-const nameInputJob = profilePopupCompletion.querySelector(".popup__input_type_job");
-const nameSubmit = profilePopupCompletion.querySelector(".popup__submit");
-const popupForm = profilePopupCompletion.querySelector(".popup__form");
-const nameUser = document.querySelector(".profile__name");
-const nameАctivity = document.querySelector(".profile__activity");
+const profileEdit = document.querySelector('.profile__edit');
+const profilePopupEdit = document.querySelector('.popup');
+const profilePopupCloseEdit = profilePopupEdit.querySelector('.popup__close');
+const nameInput = profilePopupEdit.querySelector('.popup__input_name');
+const nameInputJob = profilePopupEdit.querySelector('.popup__input_job');
+const popupForm = profilePopupEdit.querySelector('.popup__form');
+const nameUser = document.querySelector('.profile__name');
+const nameАctivity = document.querySelector('.profile__activity');
 
-profileCompletion.addEventListener("click", () => {
-  profilePopupCompletion.classList.add("popup_open");
+profileEdit.addEventListener('click', () => {
+  profilePopupEdit.classList.add('popup_opened');
   nameInput.value = nameUser.textContent;
   nameInputJob.value = nameАctivity.textContent;
 });
 
-profilePopupCloseCompletion.addEventListener("click", () => {
-  profilePopupCompletion.classList.remove('popup_open');
-  nameInput.value = profilePopupCompletion.textContent;
-  nameInputJob.value = profilePopupCompletion.textContent;
+profilePopupCloseEdit.addEventListener('click', () => {
+  profilePopupEdit.classList.remove('popup_opened');
 });
 
 
@@ -25,5 +22,5 @@ popupForm.addEventListener('submit', (event) => {
   event.preventDefault();
   nameUser.textContent = nameInput.value;
   nameАctivity.textContent = nameInputJob.value;
-profilePopupCompletion.classList.remove('popup_open');
+  profilePopupEdit.classList.remove('popup_opened');
 });

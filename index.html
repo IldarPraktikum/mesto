@@ -9,63 +9,62 @@
 <body class="page">
   <div class="page__container">
     <header class="header">
-      <img class="header__logo" src="./images/logo/Header-Logo.svg" alt="надпись Mesto Russia">
-      <img class="header__line" src="./images/logo/Header-Line.svg" alt="линия">
+      <img class="header__logo" src="./images/logo/header-logo.svg" alt="надпись Mesto Russia">
     </header>
     <main class="content">
       <section class="profile">
         <div class="profile__grid">
-          <img class="profile__avatar" src="./images/Profile-Avatar-Kusto.jpg" alt="Жак-Ив Кусто">
+          <img class="profile__avatar" src="./images/profile-avatar-kusto.jpg" alt="Жак-Ив Кусто">
           <div class="profile__info">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <p class="profile__activity">Исследователь океана</p>
           </div>
-          <div class="profile__vector profile__completion hover"><img class="profile__vector-logo" src="./images/logo/Profile-Logo-Pen.svg" alt="картитнка ручка"></div>
+          <button type="button" class="profile__vector profile__edit"></button>
         </div>
-        <div class="profile__button hover"><img class="profile__button-logo" src="./images/logo/Profile-Logo-Plus.svg" alt="плюс"></div>
+        <button type="button" class="profile__button"></button>
       </section>
       <section class="elements">
-        <ul class="element">
+        <ul class="elements-list">
           <li class="element__digit">
-            <img class="element__photo-grid" src="./images/Element-Karachaevsk.jpg" alt="логотип">
+            <img class="element__photo-grid" src="./images/element-karachaevsk.jpg" alt="логотип">
             <div class="element__alignment">
               <h3 class="element__heading">Карачаевск</h3>
-              <button type="button" class="element__button hover"></button>
+              <button type="button" class="element__button"></button>
             </div>
           </li>
           <li class="element__digit">
-            <img class="element__photo-grid" src="./images/Element-Elbrus.jpg" alt="логотип">
+            <img class="element__photo-grid" src="./images/element-elbrus.jpg" alt="логотип">
             <div class="element__alignment">
               <h3 class="element__heading">Гора Эльбрус</h3>
-              <button type="button" class="element__button hover"></button>
+              <button type="button" class="element__button"></button>
             </div>
           </li>
           <li class="element__digit">
-            <img class="element__photo-grid" src="./images/Element-Dombai.jpg" alt="логотип">
+            <img class="element__photo-grid" src="./images/element-dombai.jpg" alt="логотип">
             <div class="element__alignment">
               <h3 class="element__heading">Домбай</h3>
-              <button type="button" class="element__button hover"></button>
+              <button type="button" class="element__button"></button>
             </div>
           </li>
           <li class="element__digit">
-            <img class="element__photo-grid" src="./images/Element-Elbrus.jpg" alt="логотип">
+            <img class="element__photo-grid" src="./images/element-elbrus.jpg" alt="логотип">
             <div class="element__alignment">
               <h3 class="element__heading">Гора Эльбрус</h3>
-              <button type="button" class="element__button hover"></button>
+              <button type="button" class="element__button"></button>
             </div>
           </li>
           <li class="element__digit">
-            <img class="element__photo-grid" src="./images/Element-Dombai.jpg" alt="логотип">
+            <img class="element__photo-grid" src="./images/element-dombai.jpg" alt="логотип">
             <div class="element__alignment">
               <h3 class="element__heading">Домбай</h3>
-              <button type="button" class="element__button hover"></button>
+              <button type="button" class="element__button"></button>
             </div>
           </li>
           <li class="element__digit">
-            <img class="element__photo-grid" src="./images/Element-Karachaevsk.jpg" alt="логотип">
+            <img class="element__photo-grid" src="./images/element-karachaevsk.jpg" alt="логотип">
             <div class="element__alignment">
               <h3 class="element__heading">Карачаево-Черкесская республика</h3>
-              <button type="button" class="element__button hover"></button>
+              <button type="button" class="element__button"></button>
             </div>
           </li>
         </ul>
@@ -77,12 +76,12 @@
   </div>
   <section class="popup">
     <div class="popup__container">
-      <img class="popup__close hover" src="./images/logo/Popup-Close-Icon.svg" alt="крестик">
+      <button type="button" class="popup__close"></button>
       <h2 class="popup__text">Редактировать профиль</h2>
-      <form class="popup__form">
-        <input class="popup__input popup__input_type_name" name="name" />
-        <input class="popup__input popup__input_type_job" name="job" />
-        <button type="submit" class="popup__submit hover">Сохранить</button>
+      <form class="popup__form" name="form1">
+        <input type="text" class="popup__input popup__input_name" name="name">
+        <input type="text" class="popup__input popup__input_job" name="job">
+        <button type="submit" class="popup__submit">Сохранить</button>
       </form>
     </div>
   </section>

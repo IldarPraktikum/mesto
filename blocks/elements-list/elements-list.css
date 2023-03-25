@@ -1,4 +1,4 @@
-.element {
+.elements-list {
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, 282px);
