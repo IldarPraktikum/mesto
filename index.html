@@ -19,9 +19,9 @@
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <p class="profile__activity">Исследователь океана</p>
           </div>
-          <button type="button" class="profile__vector profile__edit"></button>
+          <button type="button" class="profile__edit"></button>
         </div>
-        <button type="button" class="profile__button"></button>
+        <button type="button" aria-label="добавить" class="profile__button"></button>
       </section>
       <section class="elements">
         <ul class="element">
@@ -78,9 +78,9 @@
     <div class="popup__container">
       <button type="button" class="popup__close"></button>
       <h2 class="popup__text">Редактировать профиль</h2>
-      <form class="popup__form" name="form1">
-        <input type="text" class="popup__input popup__input_name" name="name">
-        <input type="text" class="popup__input popup__input_job" name="job">
+      <form class="popup__form" name="form-edit">
+        <input type="text" class="popup__input" name="name" id="name">
+        <input type="text" class="popup__input" name="job" id="job">
         <button type="submit" class="popup__submit">Сохранить</button>
       </form>
     </div>

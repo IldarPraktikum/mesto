@@ -7,8 +7,8 @@
 }
 
 @media screen and (max-width:550px) {
-  .popup__text {
-    font-size: 18px;
-    padding-bottom: 75px;
-    }
+.popup__text {
+  font-size: 18px;
+  padding-bottom: 75px;
+  }
 }
