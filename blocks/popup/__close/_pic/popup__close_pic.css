@@ -1,0 +1,10 @@
+.popup__close_pic {
+  left: calc(100% - 35px);
+  transform: translateY(70%);
+}
+
+@media screen and (max-width:550px) {
+.popup__close_pic {
+  left: calc(100% - 57px);
+  }
+}

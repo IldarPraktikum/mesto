@@ -7,8 +7,11 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s linear;
   background-color: rgba(0, 0, 0, 0.5);
   margin: 0;
   padding: 0;
+  display: flex;
 }
