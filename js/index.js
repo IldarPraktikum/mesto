@@ -1,16 +1,15 @@
 const profileEdit = document.querySelector('.profile__edit');
-const popupEdit = document.querySelectorAll('.popup');
-const profilePopupCloseEdit = document.querySelectorAll('.popup__close');
+const closeButtons = document.querySelectorAll('.popup__close');
 const nameInput = document.querySelector('#name');
 const nameInputJob = document.querySelector('#job');
 const profilePopup = document.querySelector('.profile-popup');
-const popupForm = profilePopup.querySelector('.popup__form');
+const formPopupProfile = document.forms["profile-form"];
 const nameUser = document.querySelector('.profile__name');
 const nameАctivity = document.querySelector('.profile__activity');
 
 const profileButton = document.querySelector('.profile__button');
 const cardPopup = document.querySelector('.popup-card');
-const formPopupCard = cardPopup.querySelector('.popup__form');
+const formPopupCard = document.forms["card-form"];
 const popupInputCardTitle = document.querySelector('#named');
 const popupInputCardResource = document.querySelector('#resource');
 const cardPicturePopup = document.querySelector('.popup-picture');
@@ -49,12 +48,12 @@ const initialCards = [
   }
 ];
 
-function openPopup (popup) {
-  popup.classList.add ('popup_opened');
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
 }                                                    /*функция открытия*/
 
-function closePopup (popup) {
-  popup.classList.remove ('popup_opened');
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
 }                                                   /*функция закрытия*/
 
 profileEdit.addEventListener('click', () => {
@@ -63,17 +62,17 @@ profileEdit.addEventListener('click', () => {
   nameInputJob.value = nameАctivity.textContent;
 })                                                   /*открытие попапа профиля с нужными инпутами*/
 
-popupForm.addEventListener('submit', (event) => {
+formPopupProfile.addEventListener('submit', (event) => {
   event.preventDefault();
   nameUser.textContent = nameInput.value;
   nameАctivity.textContent = nameInputJob.value;
   closePopup(profilePopup);
 });                                                 /*закрытие попапа профиля с нужными инпутами*/
 
-profilePopupCloseEdit.forEach((element) => {
+closeButtons.forEach((element) => {
   const popup = element.closest('.popup');
   element.addEventListener('click', () => {
-  closePopup(popup);
+    closePopup(popup);
   })
 })                                                    /*закрытие попапа кнопокой*/
 
@@ -100,7 +99,7 @@ function addCard(object) {                                                      
     cardPopupPicture.alt = object.name;
     cardPicturePopupCaption.textContent = object.name;
     openPopup(cardPicturePopup);                                            /*открытие картинки */
-});
+  });
   return liElement;                                            /*вернул результат в список*/
 }
 
@@ -110,8 +109,8 @@ initialCards.forEach((unit) => {
 })                                                      /*разделили массив на элементы и вложили в функцию и разметку*/
 
 formPopupCard.addEventListener('submit', (evt) => {
-  event.preventDefault();
-  const twoEl = {name: popupInputCardTitle.value, link: popupInputCardResource.value};
+  evt.preventDefault();
+  const twoEl = { name: popupInputCardTitle.value, link: popupInputCardResource.value };
   listElement.prepend(addCard(twoEl));
   closePopup(cardPopup);
   evt.target.reset();
