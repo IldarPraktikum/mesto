@@ -36,9 +36,11 @@
     <div class="popup__container">
       <button type="button" class="popup__close"></button>
       <h2 class="popup__text">Редактировать профиль</h2>
-      <form class="popup__form" name="profile-form">
-        <input type="text" class="popup__input" name="name" id="name">
-        <input type="text" class="popup__input" name="job" id="job">
+      <form class="popup__form" name="profile-form" novalidate>
+        <input type="text" class="popup__input" name="name" id="name" placeholder="Имя" required minlength="2" maxlength="40">
+        <span id="error-name" class="popup__error"></span>
+        <input type="text" class="popup__input" name="job" id="job" placeholder="О себе" required minlength="2" maxlength="200">
+        <span id="error-job" class="popup__error"></span>
         <button type="submit" class="popup__submit">Сохранить</button>
       </form>
     </div>
@@ -47,9 +49,11 @@
     <div class="popup__container">
       <button type="button" class="popup__close"></button>
       <h2 class="popup__text">Новое место</h2>
-      <form class="popup__form" name="card-form">
-        <input type="text" class="popup__input" name="named" id="named" placeholder="Название">
-        <input type="text" class="popup__input" name="resource" id="resource" placeholder="Ссылка на картинку">
+      <form class="popup__form" name="card-form" novalidate>
+        <input type="text" class="popup__input" name="named" id="named" placeholder="Название" required minlength="2" maxlength="30">
+        <span id="error-named" class="popup__error"></span>
+        <input type="url" class="popup__input" name="resource" id="resource" placeholder="Ссылка на картинку" required minlength="1" maxlength="30">
+        <span id="error-resource" class="popup__error"></span>
         <button type="submit" class="popup__submit">Создать</button>
       </form>
     </div>
@@ -73,6 +77,7 @@
       </div>
     </li>
   </template>
+  <script src="./validate.js"></script>
   <script src="./js/index.js"></script>
 </body>
 </html>

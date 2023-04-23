@@ -48,26 +48,46 @@ const initialCards = [
   }
 ];
 
+
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-}                                                    /*функция открытия*/
+  document.addEventListener('keydown', closePopupByEscape);
+}                                                                                /*функция открытия*/
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-}                                                   /*функция закрытия*/
+     document.removeEventListener('keydown', closePopupByEscape);
+}                                                                               /*функция закрытия*/
 
 profileEdit.addEventListener('click', () => {
-  openPopup(profilePopup)
+  openPopup(profilePopup);
   nameInput.value = nameUser.textContent;
   nameInputJob.value = nameАctivity.textContent;
-})                                                   /*открытие попапа профиля с нужными инпутами*/
+  resetProfileForm(formPopupProfile);
+})                                                           /*открытие попапа профиля с нужными инпутами*/
 
 formPopupProfile.addEventListener('submit', (event) => {
   event.preventDefault();
   nameUser.textContent = nameInput.value;
   nameАctivity.textContent = nameInputJob.value;
   closePopup(profilePopup);
-});                                                 /*закрытие попапа профиля с нужными инпутами*/
+});                                                     /*закрытие попапа профиля с нужными инпутами*/
+
+function closePopupByEscape(evt) {                                                   /*закрытие попапа по Escape*/
+  if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  }
+}
+
+function closePopupByTapBehindOverlay(evt) {                               /*закрытие попапа по нажатию за пределами оверлея*/
+  if (evt.target === evt.currentTarget) {
+    closePopup(evt.currentTarget);
+  }
+}
+
+const popupParts = document.querySelectorAll('.popup');
+popupParts.forEach(element => element.addEventListener('click', closePopupByTapBehindOverlay));
 
 closeButtons.forEach((element) => {
   const popup = element.closest('.popup');
@@ -77,6 +97,7 @@ closeButtons.forEach((element) => {
 })                                                    /*закрытие попапа кнопокой*/
 
 profileButton.addEventListener('click', () => {
+  resetCardForm(formPopupCard);
   openPopup(cardPopup);
 })                                                     /*открытие второго попапа */
 
@@ -115,7 +136,3 @@ formPopupCard.addEventListener('submit', (evt) => {
   closePopup(cardPopup);
   evt.target.reset();
 });                                                       /*настроил инпуты для сохранения картинок*/
-
-
-
-
