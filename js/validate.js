@@ -1,10 +1,10 @@
 function setInputValidState (input, errorElement) {
-  input.classList.remove('popup__input_text-invalid');
+  input.classList.remove(config.inputErrorClass);
   errorElement.textContent = '';
 }
 
 function setInputInvalidState (input, errorElement) {
-  input.classList.add('popup__input_text-invalid');
+  input.classList.add(config.inputErrorClass);
   errorElement.textContent = input.validationMessage;
 }
 
@@ -83,6 +83,7 @@ const config = {
 };
 
 enableValidation(config);                                           /*функция, которая отвечает за включение валидации всех форм*/
+
 
 
 

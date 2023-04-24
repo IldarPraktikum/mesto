@@ -101,7 +101,7 @@ profileButton.addEventListener('click', () => {
   openPopup(cardPopup);
 })                                                     /*открытие второго попапа */
 
-function addCard(object) {                                                        /*создаем карточку */
+function creatCard(object) {                                                        /*создаем карточку */
   const liElement = cardElement.querySelector('.listElement').cloneNode(true);
   const image = liElement.querySelector('.picture-popup-open');
   const deleted = liElement.querySelector('.delete');
@@ -125,14 +125,14 @@ function addCard(object) {                                                      
 }
 
 initialCards.forEach((unit) => {
-  const card = addCard(unit);
+  const card = creatCard(unit);
   listElement.append(card);
 })                                                      /*разделили массив на элементы и вложили в функцию и разметку*/
 
 formPopupCard.addEventListener('submit', (evt) => {
   evt.preventDefault();
-  const twoEl = { name: popupInputCardTitle.value, link: popupInputCardResource.value };
-  listElement.prepend(addCard(twoEl));
+  const cardData = { name: popupInputCardTitle.value, link: popupInputCardResource.value };
+  listElement.prepend(creatCard(cardData));
   closePopup(cardPopup);
   evt.target.reset();
 });                                                       /*настроил инпуты для сохранения картинок*/

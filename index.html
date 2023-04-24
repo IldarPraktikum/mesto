@@ -52,7 +52,7 @@
       <form class="popup__form" name="card-form" novalidate>
         <input type="text" class="popup__input" name="named" id="named" placeholder="Название" required minlength="2" maxlength="30">
         <span id="error-named" class="popup__error"></span>
-        <input type="url" class="popup__input" name="resource" id="resource" placeholder="Ссылка на картинку" required minlength="1" maxlength="30">
+        <input type="url" class="popup__input" name="resource" id="resource" placeholder="Ссылка на картинку" required>
         <span id="error-resource" class="popup__error"></span>
         <button type="submit" class="popup__submit">Создать</button>
       </form>
@@ -78,6 +78,6 @@
     </li>
   </template>
   <script src="./js/validate.js"></script>
-  <script src="./js/index.js"></script>
+  <script defer src="./js/index.js"></script>
 </body>
 </html>
