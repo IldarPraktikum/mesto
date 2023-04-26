@@ -1,19 +1,19 @@
-function setInputValidState (input, errorElement) {
+function setInputValidState (config, input, errorElement) {
   input.classList.remove(config.inputErrorClass);
   errorElement.textContent = '';
 }
 
-function setInputInvalidState (input, errorElement) {
+function setInputInvalidState (config, input, errorElement) {
   input.classList.add(config.inputErrorClass);
   errorElement.textContent = input.validationMessage;
 }
 
-function checkInputValidity(input, form) {                                                 /*функция с условием валидности инпутов в форме*/
+function checkInputValidity(config, input, form) {                                                 /*функция с условием валидности инпутов в форме*/
   const errorElement = form.querySelector(`#error-${input.id}`);
   if (input.checkValidity()) {
-    setInputValidState (input, errorElement);
+    setInputValidState (config, input, errorElement);
   } else {
-    setInputInvalidState (input, errorElement);
+    setInputInvalidState (config, input, errorElement);
   }
 }
 
@@ -44,16 +44,16 @@ function setSubmitListener(config, form) {                           /*наст�
   });
 }
 
-function resetProfileForm(form) {
+function resetProfileForm(config, form) {
   toggleButtonValidity(config, form);
   const inputs = form.querySelectorAll(config.inputSelector);
   const inputsArray = Array.from(inputs);
   inputsArray.forEach(function (input) {
-      checkInputValidity(input, form);
+      checkInputValidity(config, input, form);
   });
 }
 
-function resetCardForm(form) {
+function resetCardForm(config, form) {
   toggleButtonValidity(config, form);
 }
 
@@ -66,7 +66,7 @@ function enableValidation({formSelector, inputSelector, ...rest}) {            /
     const inputsArray = Array.from(inputs);
     inputsArray.forEach(function (input) {
       input.addEventListener('input', () => {
-        checkInputValidity(input, form);
+        checkInputValidity(config, input, form);
         toggleButtonValidity(rest, form);
       });
     });

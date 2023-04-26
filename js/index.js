@@ -63,7 +63,7 @@ profileEdit.addEventListener('click', () => {
   openPopup(profilePopup);
   nameInput.value = nameUser.textContent;
   nameInputJob.value = nameАctivity.textContent;
-  resetProfileForm(formPopupProfile);
+  resetProfileForm(config, formPopupProfile);
 })                                                           /*открытие попапа профиля с нужными инпутами*/
 
 formPopupProfile.addEventListener('submit', (event) => {
@@ -97,7 +97,7 @@ closeButtons.forEach((element) => {
 })                                                    /*закрытие попапа кнопокой*/
 
 profileButton.addEventListener('click', () => {
-  resetCardForm(formPopupCard);
+  resetCardForm(config, formPopupCard);
   openPopup(cardPopup);
 })                                                     /*открытие второго попапа */
 
