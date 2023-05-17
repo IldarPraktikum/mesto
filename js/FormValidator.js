@@ -66,11 +66,7 @@ export default class FormValidator {
     this._inputList.forEach(input => {
       this._setInputValidState(input)
     });
-  }  /*функция, которая проверяет первую форму*/
-
-//  validateCardForm() {
-  //  this._toggleButtonValidity();
-//  }  /*функция, которая проверяет вторую форму*/
+  }  /*функция, которая проверяет форму*/
 }
 
 
