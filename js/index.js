@@ -1,3 +1,6 @@
+import Card from './Card.js';
+import FormValidator from './FormValidator.js';
+
 const profileEdit = document.querySelector('.profile__edit');
 const closeButtons = document.querySelectorAll('.popup__close');
 const nameInput = document.querySelector('#name');
@@ -13,12 +16,10 @@ const formPopupCard = document.forms["card-form"];
 const popupInputCardTitle = document.querySelector('#named');
 const popupInputCardResource = document.querySelector('#resource');
 const cardPicturePopup = document.querySelector('.popup-picture');
-const cardPicturePopupContainer = document.querySelector('.popup-picture__container');
-const cardPicturePopupOpen = document.querySelector('.picture-popup-open');
 const cardPicturePopupCaption = document.querySelector('.popup-picture__caption');
 const cardPopupPicture = document.querySelector('.popup-picture__open');
 
-const cardElement = document.querySelector('#cardElement').content;
+const templateSelector = '#cardElement';
 const listElement = document.querySelector('.element');
 
 const initialCards = [
@@ -48,6 +49,20 @@ const initialCards = [
   }
 ];
 
+const config = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__submit',
+  inactiveButtonClass: 'popup__submit_disabled',
+  inputErrorClass: 'popup__input_text-invalid',
+  errorClass: 'popup__error_visible'
+};
+
+const formPopupProfileValidator = new FormValidator(config, formPopupProfile);
+formPopupProfileValidator.enableValidation();
+
+const formPopupCardValidator = new FormValidator(config, formPopupCard);
+formPopupCardValidator.enableValidation();
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -63,7 +78,7 @@ profileEdit.addEventListener('click', () => {
   openPopup(profilePopup);
   nameInput.value = nameUser.textContent;
   nameInputJob.value = nameАctivity.textContent;
-  resetProfileForm(config, formPopupProfile);
+  formPopupProfileValidator.resetProfileForm()
 })                                                           /*открытие попапа профиля с нужными инпутами*/
 
 formPopupProfile.addEventListener('submit', (event) => {
@@ -86,6 +101,13 @@ function closePopupByTapBehindOverlay(evt) {                               /*з�
   }
 }
 
+function openPopupImage(cardData) {
+  cardPopupPicture.src = cardData.link;
+  cardPopupPicture.alt = cardData.name;
+  cardPicturePopupCaption.textContent = cardData.name;
+  openPopup(cardPicturePopup);
+}
+
 const popupParts = document.querySelectorAll('.popup');
 popupParts.forEach(element => element.addEventListener('click', closePopupByTapBehindOverlay));
 
@@ -97,42 +119,32 @@ closeButtons.forEach((element) => {
 })                                                    /*закрытие попапа кнопокой*/
 
 profileButton.addEventListener('click', () => {
-  resetCardForm(config, formPopupCard);
+  formPopupCardValidator.resetCardForm()
   openPopup(cardPopup);
 })                                                     /*открытие второго попапа */
 
-function creatCard(object) {                                                        /*создаем карточку */
-  const liElement = cardElement.querySelector('.listElement').cloneNode(true);
-  const image = liElement.querySelector('.picture-popup-open');
-  const deleted = liElement.querySelector('.delete');
-  const likeButton = liElement.querySelector('.button-like');
 
-  image.src = object.link;
-  image.alt = object.name;
-  liElement.querySelector('.subtitle').textContent = object.name;
-
-  likeButton.addEventListener('click', () => likeButton.classList.toggle('button-like_active'));      /*меняем цвет лайка */
-
-  deleted.addEventListener('click', () => deleted.closest('.listElement').remove());           /*удаляем картинку при нажатии на корзинку */
-
-  image.addEventListener('click', () => {
-    cardPopupPicture.src = object.link;
-    cardPopupPicture.alt = object.name;
-    cardPicturePopupCaption.textContent = object.name;
-    openPopup(cardPicturePopup);                                            /*открытие картинки */
-  });
-  return liElement;                                            /*вернул результат в список*/
+function addCard(container, card) {
+  container.prepend(card);
 }
 
-initialCards.forEach((unit) => {
-  const card = creatCard(unit);
-  listElement.append(card);
+initialCards.forEach((element) => {
+  const card = new Card(element, templateSelector, openPopupImage);
+  addCard(listElement, card.creatCard());
 })                                                      /*разделили массив на элементы и вложили в функцию и разметку*/
 
 formPopupCard.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const cardData = { name: popupInputCardTitle.value, link: popupInputCardResource.value };
-  listElement.prepend(creatCard(cardData));
+  const card = new Card(cardData, templateSelector, openPopupImage);
+  addCard(listElement, card.creatCard());
   closePopup(cardPopup);
-  evt.target.reset();
 });                                                       /*настроил инпуты для сохранения картинок*/
+
+
+
+
+
+
+
+
