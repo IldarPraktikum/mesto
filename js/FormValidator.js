@@ -61,16 +61,16 @@ export default class FormValidator {
     this._setInputListener();
   }
 
-  resetProfileForm() {                                 /*функция, которая сбрасывает первую форму*/
+  validateForm() {
     this._toggleButtonValidity();
     this._inputList.forEach(input => {
-      this._checkInputValidity(input);
+      this._setInputValidState(input)
     });
-  }
+  }  /*функция, которая проверяет первую форму*/
 
-  resetCardForm() {                                    /*функция, которая сбрасывает вторую форму*/
-    this._toggleButtonValidity();
-  }
+//  validateCardForm() {
+  //  this._toggleButtonValidity();
+//  }  /*функция, которая проверяет вторую форму*/
 }
 
 

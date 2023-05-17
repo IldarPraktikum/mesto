@@ -78,7 +78,7 @@ profileEdit.addEventListener('click', () => {
   openPopup(profilePopup);
   nameInput.value = nameUser.textContent;
   nameInputJob.value = nameАctivity.textContent;
-  formPopupProfileValidator.resetProfileForm()
+  formPopupProfileValidator.validateForm()
 })                                                           /*открытие попапа профиля с нужными инпутами*/
 
 formPopupProfile.addEventListener('submit', (event) => {
@@ -119,7 +119,8 @@ closeButtons.forEach((element) => {
 })                                                    /*закрытие попапа кнопокой*/
 
 profileButton.addEventListener('click', () => {
-  formPopupCardValidator.resetCardForm()
+  formPopupCard.reset()
+  formPopupCardValidator.validateForm()
   openPopup(cardPopup);
 })                                                     /*открытие второго попапа */
 
@@ -139,6 +140,7 @@ formPopupCard.addEventListener('submit', (evt) => {
   const card = new Card(cardData, templateSelector, openPopupImage);
   addCard(listElement, card.creatCard());
   closePopup(cardPopup);
+  evt.target.reset();
 });                                                       /*настроил инпуты для сохранения картинок*/
 
 

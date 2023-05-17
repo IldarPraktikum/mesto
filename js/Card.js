@@ -26,7 +26,7 @@ export default class Card {
   }
 
   _setEventListener () {
-    this._likeButton.addEventListener('click', this._useleLike);
+    this._likeButton.addEventListener('click', this._useLike);
     this._deleted.addEventListener('click', this._useDeletedCard);
     this._image.addEventListener('click', this._useOpenPopupImage);
   }          /*фнкция навешивания слушателей */
