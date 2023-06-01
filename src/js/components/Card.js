@@ -1,8 +1,7 @@
 export default class Card {
   constructor(cardData, templateSelector, openPopupImage) {
-    this._cardData = cardData;
     this._link = cardData.link;
-    this._name = cardData.place;
+    this._name = cardData.title;
     this._templateSelector = templateSelector;
     this._openPopupImage = openPopupImage;
   }
@@ -22,7 +21,7 @@ export default class Card {
 
 
   _useOpenPopupImage = () => {
-    this._openPopupImage(this._cardData);
+    this._openPopupImage({title: this._name, link: this._link});
   }
 
   _setEventListener () {
@@ -43,4 +42,4 @@ export default class Card {
     this._setEventListener();
     return this._cardElement;
   }
-}         /*фнкция возвращает переприсвоенные значения */
+}         /*фнкция возвращает созданную карточку */

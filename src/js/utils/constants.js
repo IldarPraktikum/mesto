@@ -1,27 +1,33 @@
+import arkhyz from '../../images/arhiz.jpg';
+import chel from '../../images/chel.jpg';
+import ivanovo from '../../images/ivan1.jpg';
+import kamch from '../../images/kamch.jpg';
+import baikal from '../../images/baikal.jpg';
+
 const initialCards = [
   {
-    place: 'Архыз',
-    link: './images/arhiz.jpg'
+    title: 'Архыз',
+    link: arkhyz
   },
   {
-    place: 'Челябинская область',
-    link: './images/chel.jpg'
+    title: 'Челябинская область',
+    link: chel
   },
   {
-    place: 'Иваново',
-    link: './images/ivan1.jpg'
+    title: 'Иваново',
+    link: ivanovo
   },
   {
-    place: 'Камчатка',
-    link: './images/kamch.jpg'
+    title: 'Камчатка',
+    link: kamch
   },
   {
-    place: 'Холмогорский район',
+    title: 'Холмогорский район',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
   },
   {
-    place: 'Байкал',
-    link: './images/baikal.jpg'
+    title: 'Байкал',
+    link: baikal
   }
 ];
 

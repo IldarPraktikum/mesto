@@ -36,19 +36,13 @@ const section = new Section({
 
 section.addCardFromArray()
 
-const popupProfile = new PopupWithForm(popupProfileSelector, (evt) => {
-  evt.preventDefault();
-  userInfo.setUserInfo(popupProfile.getInputValue())
-  popupProfile.close();
-})
+const popupProfile = new PopupWithForm(popupProfileSelector, (data) => {
+  userInfo.setUserInfo(data);
+});
 
-
-const popupAddCard = new PopupWithForm(popupAddCardSelector, (evt) => {
-  evt.preventDefault();
-  section.addItem(section.renderer(popupAddCard.getInputValue()));
-  popupAddCard.close();
-})
-
+const popupAddCard = new PopupWithForm(popupAddCardSelector, (data) => {
+  section.addItem(section.renderer(data));
+});
 
 popupImage.setEventListeners();
 popupProfile.setEventListeners();
@@ -62,24 +56,13 @@ formPopupCardValidator.enableValidation();
 
 
 profileEdit.addEventListener('click', () => {
-  formPopupProfileValidator.validateForm();
-  popupProfile.setInputValue(userInfo.getUserInfo());
+  formPopupProfileValidator.resetValidationState();
+  popupProfile.setInputValues(userInfo.getUserInfo());
   popupProfile.open()
 })                                                           /*открытие попапа профиля с нужными инпутами*/
 
 
 profileButton.addEventListener('click', () => {
-  formPopupCardValidator.validateForm();
+  formPopupCardValidator.resetValidationState();
   popupAddCard.open()
 })                                                     /*открытие второго попапа */
-
-
-
-
-
-
-
-
-
-
-
