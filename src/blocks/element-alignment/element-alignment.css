@@ -1,8 +1,14 @@
 .element-alignment {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 2;
+  grid-template-areas: 
+  "subtitle button-like"
+  "subtitle counter";
+  align-items: center;
+  align-content: center;
   margin: 0;
-  padding: 25px 15px 31px 21px;
+  padding: 22px 15px 22px 21px;
   max-width: 100%;
   box-sizing: border-box;
 }

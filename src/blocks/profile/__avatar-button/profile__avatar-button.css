@@ -1,0 +1,22 @@
+.profile__avatar-button {
+  grid-area: profile__avatar;
+  width: 123.75px;
+  margin-right: 26.25px;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 123.75px;
+  display: block;
+  background-image: url(../../../images/logo/Vector-pencil.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  }
+  
+  @media screen and (max-width:900px) {
+  .profile__avatar-button {
+    margin-right: 0;
+  }
+}

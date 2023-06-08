@@ -6,17 +6,17 @@ export default class Popup {
 
   _handleEscClose = (evt) => {
     if (evt.key === 'Escape') {
-      this.close()
+      this.close();
     }
   }
 
   _handleCloseButton = () => {
-    this.close()
+    this.close();
   }
 
   _handleClosePopupByTapBehindOverlay = (evt) => {
     if (evt.target === evt.currentTarget) {
-      this.close()
+      this.close();
     }
   }
 

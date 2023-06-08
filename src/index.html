@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mesto Russia</title>
 </head>
@@ -13,10 +14,12 @@
     <main class="content">
       <section class="profile">
         <div class="profile__grid">
-          <img class="profile__avatar" src="<%=require('./images/Profile-Avatar-Kusto.jpg')%>" alt="Жак-Ив Кусто">
+          <button type="button" class="profile__avatar-button">
+            <img class="profile__avatar" src="#" alt="Жак-Ив Кусто">
+          </button>
           <div class="profile__info">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <p class="profile__activity">Исследователь океана</p>
+            <h1 class="profile__name"></h1>
+            <p class="profile__activity"></p>
           </div>
           <button type="button" class="profile__edit"></button>
         </div>
@@ -66,6 +69,26 @@
       </figure>
     </div>
   </section>
+  <section class="popup popup-avatar">
+    <div class="popup-avatar__container">
+      <button type="button" class="popup__close"></button>
+      <h2 class="popup__text">Обновить аватар</h2>
+      <form class="popup__form" name="avatar-form" novalidate>
+        <input type="url" class="popup__input" name="avatar" id="avatar" placeholder="Ссылка на аватарку" required>
+        <span id="error-avatar" class="popup__error"></span>
+        <button type="submit" class="popup__submit">Сохранить</button>
+      </form>
+    </div>
+  </section>
+  <section class="popup popup-delete">
+    <div class="popup-delete__container">
+      <button type="button" class="popup__close"></button>
+      <h2 class="popup__text">Вы уверены?</h2>
+      <form class="popup__form" name="deleteCard-form" novalidate>
+        <button type="submit" class="popup__submit">Да</button>
+      </form>
+    </div>
+  </section>
   <template id="cardElement" class="template">
     <li class="listElement">
       <img src="#" alt="#" class="picture-popup-open">
@@ -73,8 +96,10 @@
       <div class="element-alignment">
         <h2 class="subtitle"></h2>
         <button type="button" class="button-like"></button>
+        <span class="elements__counter"></span>
       </div>
     </li>
   </template>
+  <!-- <script type="module" src="./pages/index.js"></script> -->
 </body>
 </html>

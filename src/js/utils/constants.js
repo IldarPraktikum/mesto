@@ -1,25 +1,19 @@
-import arkhyz from '../../images/arhiz.jpg';
-import chel from '../../images/chel.jpg';
-import ivanovo from '../../images/ivan1.jpg';
-import kamch from '../../images/kamch.jpg';
-import baikal from '../../images/baikal.jpg';
-
 const initialCards = [
   {
     title: 'Архыз',
-    link: arkhyz
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
   },
   {
     title: 'Челябинская область',
-    link: chel
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
   },
   {
     title: 'Иваново',
-    link: ivanovo
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
   },
   {
     title: 'Камчатка',
-    link: kamch
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
   },
   {
     title: 'Холмогорский район',
@@ -27,12 +21,13 @@ const initialCards = [
   },
   {
     title: 'Байкал',
-    link: baikal
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
 
 const profileEdit = document.querySelector('.profile__edit');
 const profileButton = document.querySelector('.profile__button');
+const avatarElement = document.querySelector('.profile__avatar-button');
 
 const templateSelector = '#cardElement';
 const popupProfileSelector = '.profile-popup';
@@ -43,11 +38,14 @@ const listElementSelector = '.element';
 const userInfoConfig = {
   profileNameSelector: '.profile__name',
   profileActivitySelector: '.profile__activity',
+  profileAvatar: '.profile__avatar',
 }
 
 const formPopupProfile = document.forms["profile-form"];
 
 const formPopupCard = document.forms["card-form"];
+
+const formPopupAvatar = document.forms["avatar-form"];
 
 const config = {
   formSelector: '.popup__form',
@@ -61,6 +59,7 @@ const config = {
 export {
   initialCards,
   profileEdit,
+  avatarElement,
   profileButton,
   templateSelector,
   popupProfileSelector,
@@ -70,5 +69,6 @@ export {
   userInfoConfig,
   formPopupProfile,
   formPopupCard,
+  formPopupAvatar,
   config
 };

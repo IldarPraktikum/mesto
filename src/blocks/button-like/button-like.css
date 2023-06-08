@@ -3,10 +3,12 @@
   background-repeat: no-repeat;
   width: 22px;
   height: 19px;
-  align-self: center;
+  /* align-self: center; */
   margin: 0;
   border: none;
   background-color: transparent;
+  grid-area: button-like;
+  justify-self: end;
 }
 
 .button-like:hover {
