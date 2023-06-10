@@ -24,6 +24,7 @@ import {
 } from '../js/utils/constants.js';
 const popupDeleteSelector = '.popup-delete';
 const popupEditAvatarSelector = '.popup-avatar';
+const myUser = {};
 
 
 const api = new Api({
@@ -86,9 +87,9 @@ const popupProfile = new PopupWithForm(popupProfileSelector, (data) => {
 });
 
 const popupAddCard = new PopupWithForm(popupAddCardSelector, (data) => {
-  Promise.all([api.getInfo(), api.addCard(data)])
-  .then(([dataUser, dataCard]) => {
-    dataCard.myid = dataUser._id;
+  api.addCard(data)
+  .then(dataCard => {
+    dataCard.myid = myUser.id;
     section.addItemPrepend(creatNewCard(dataCard))
     popupAddCard.close()
   })
@@ -138,6 +139,7 @@ avatarElement.addEventListener('click', () => {
 
 Promise.all([api.getInfo(), api.getCards()])
 .then(([dataUser, dataCard]) => {
+  myUser.id = dataUser._id;
   dataCard.forEach(element => element.myid = dataUser._id)
   userInfo.setUserInfo({ name: dataUser.name, job: dataUser.about, avatar: dataUser.avatar })
   section.addCardFromArray(dataCard);
